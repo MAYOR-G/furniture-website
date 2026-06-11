@@ -72,7 +72,7 @@ export function Footer() {
       </div>
       <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-ivory/48 sm:flex-row sm:items-center sm:justify-between">
         <p>Copyright 2026 {brand.name}. All rights reserved.</p>
-        <p>Furniture showroom website template by MayorG Project.</p>
+        <p>Private showroom appointments available by request.</p>
       </div>
     </footer>
   );

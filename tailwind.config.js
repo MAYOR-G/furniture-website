@@ -15,7 +15,7 @@ export default {
         stone: "#d8cabb",
       },
       fontFamily: {
-        display: ["Cormorant Garamond", "Georgia", "serif"],
+        display: ["Libre Caslon Display", "Georgia", "serif"],
         body: ["Manrope", "Avenir Next", "Segoe UI", "sans-serif"],
       },
       boxShadow: {

@@ -57,12 +57,19 @@ export type Testimonial = {
   initials: string;
 };
 
+export type HeroSlide = {
+  title: string;
+  subtitle: string;
+  location: string;
+  image: string;
+};
+
 export const brand = {
   name: "Oak & Ivory Living",
   tagline: "Furniture, styling, and quiet luxury for considered homes.",
-  phone: "+234 805 555 0147",
+  phone: "+44 20 7946 0488",
   email: "hello@oakandivoryliving.com",
-  address: "Plot 18 Admiralty Way, Lekki Phase 1, Lagos",
+  address: "34 Duke Street, Mayfair, London W1K 6DU",
   instagram: "@oakandivoryliving",
 };
 
@@ -78,6 +85,30 @@ export const heroStats = [
   { value: "12+", label: "curated room sets" },
   { value: "48 hr", label: "design quote turnaround" },
   { value: "4.9/5", label: "client experience rating" },
+];
+
+export const heroSlides: HeroSlide[] = [
+  {
+    title: "Mayfair apartment edit",
+    subtitle: "Soft ivory upholstery, quiet walnut storage, and layered lighting for city living.",
+    location: "London",
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=86",
+  },
+  {
+    title: "West Village lounge",
+    subtitle: "Relaxed silhouettes, sculptural tables, and warm neutrals with gallery-style restraint.",
+    location: "New York",
+    image:
+      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1400&q=86",
+  },
+  {
+    title: "Lincoln Park dining room",
+    subtitle: "A composed hosting suite built around timber, stone, and beautifully balanced seating.",
+    location: "Chicago",
+    image:
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=86",
+  },
 ];
 
 export const collections: Collection[] = [
@@ -120,36 +151,36 @@ export const collections: Collection[] = [
 
 export const products: Product[] = [
   {
-    name: "Adena Cloud Sofa",
+    name: "Alden Cloud Sofa",
     category: "Living Room",
-    price: "NGN 1,850,000",
+    price: "$4,950",
     badge: "Best Seller",
     image:
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
     materials: "Boucle upholstery, walnut plinth",
   },
   {
-    name: "Lekki Cane Lounge Chair",
+    name: "Hudson Cane Lounge Chair",
     category: "Accent Seating",
-    price: "NGN 620,000",
+    price: "$1,680",
     badge: "New Arrival",
     image:
       "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=900&q=80",
     materials: "Ash frame, handwoven cane",
   },
   {
-    name: "Iroko Dining Table",
+    name: "Mayfair Dining Table",
     category: "Dining",
-    price: "NGN 1,450,000",
+    price: "$3,850",
     badge: "Custom Sizes",
     image:
       "https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=900&q=80",
-    materials: "Iroko top, bronze metal base",
+    materials: "Oak top, bronze metal base",
   },
   {
     name: "Ivory Arc Bed",
     category: "Bedroom",
-    price: "NGN 980,000",
+    price: "$2,650",
     badge: "Made to Order",
     image:
       "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80",
@@ -158,7 +189,7 @@ export const products: Product[] = [
   {
     name: "Marina Storage Console",
     category: "Storage",
-    price: "NGN 720,000",
+    price: "$1,940",
     badge: "Ready Stock",
     image:
       "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=900&q=80",
@@ -167,7 +198,7 @@ export const products: Product[] = [
   {
     name: "Bronze Nesting Tables",
     category: "Occasional Tables",
-    price: "NGN 380,000",
+    price: "$980",
     badge: "Limited Run",
     image:
       "https://images.unsplash.com/photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80",
@@ -197,7 +228,7 @@ export const features: Feature[] = [
   {
     title: "Delivery and installation",
     description:
-      "Our team coordinates protected delivery, placement, and final setup across Lagos and selected cities.",
+      "Our team coordinates protected delivery, placement, and final setup across London, Manchester, New York, and Chicago.",
     icon: Truck,
   },
 ];
@@ -233,23 +264,23 @@ export const testimonials: Testimonial[] = [
   {
     quote:
       "The team understood the kind of calm, refined home we wanted. The sofa, dining set, and styling pieces arrived exactly as discussed.",
-    name: "Adaora N.",
-    title: "Homeowner, Ikoyi",
-    initials: "AN",
+    name: "Amelia R.",
+    title: "Homeowner, London",
+    initials: "AR",
   },
   {
     quote:
       "Oak & Ivory gives clients a showroom experience that feels premium without being intimidating. Their custom sizing process is very clear.",
-    name: "Tunde A.",
-    title: "Interior designer, Lagos",
-    initials: "TA",
+    name: "Thomas W.",
+    title: "Interior designer, Manchester",
+    initials: "TW",
   },
   {
     quote:
-      "We needed durable pieces for a serviced apartment project. They helped us balance beauty, maintenance, delivery timing, and budget.",
-    name: "Mariam B.",
-    title: "Hospitality operator",
-    initials: "MB",
+      "We needed durable pieces for a boutique rental project. They helped us balance beauty, maintenance, delivery timing, and budget.",
+    name: "Claire M.",
+    title: "Hospitality operator, Chicago",
+    initials: "CM",
   },
 ];
 
@@ -257,7 +288,7 @@ export const assuranceItems = [
   { label: "Secure quote process", icon: ShieldCheck },
   { label: "Quality-checked finishes", icon: BadgeCheck },
   { label: "Packed for delivery", icon: PackageCheck },
-  { label: "Lagos showroom visits", icon: MapPin },
+  { label: "Private showroom visits", icon: MapPin },
   { label: "Phone consultation", icon: Phone },
 ];
 

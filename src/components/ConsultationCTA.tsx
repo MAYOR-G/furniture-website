@@ -22,11 +22,10 @@ export function ConsultationCTA() {
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-ivory/72">
               We will help translate your preferred mood into furniture sizes,
-              fabrics, finishes, delivery timelines, and a clear quotation.
-              Replace this CTA with WhatsApp, Calendly, or your preferred booking
-              link for a real client.
+              fabrics, finishes, delivery timelines, and a clear quotation for
+              your home, rental property, or hospitality project.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <ButtonLink href={`tel:${brand.phone.replace(/\s/g, "")}`} variant="light">
                 Call {brand.phone}
               </ButtonLink>

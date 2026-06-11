@@ -29,12 +29,12 @@ function App() {
               <SectionHeader
                 eyebrow="Featured collections"
                 title="Room-by-room pieces with a showroom eye."
-                description="Use these categories as starter pathways for clients. Every card can be swapped with a client's actual inventory, product photography, or service category."
+                description="Explore complete room stories built around scale, texture, comfort, and the quiet details that make a home feel collected."
               />
               <p className="max-w-xl text-base leading-8 text-charcoal/60 lg:justify-self-end">
-                The layout is designed for furniture brands that sell both
-                ready-made pieces and custom projects, with enough visual weight
-                to feel premium before real client imagery is added.
+                From tailored upholstery to solid wood dining and outdoor living,
+                each collection balances polished design with pieces made for
+                everyday use.
               </p>
             </div>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
@@ -49,8 +49,8 @@ function App() {
           <div className="mx-auto max-w-7xl">
             <SectionHeader
               eyebrow="Product showcase"
-              title="Premium cards for best sellers, quote requests, and seasonal edits."
-              description="A flexible product grid with badges, material notes, NGN-friendly pricing, and hover states that make the catalogue feel alive."
+              title="Selected pieces for considered rooms."
+              description="A focused edit of sofas, dining pieces, beds, storage, and accent tables with transparent dollar pricing and refined material notes."
               align="center"
             />
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -66,7 +66,7 @@ function App() {
             <SectionHeader
               eyebrow="Why choose us"
               title="A calmer way to furnish homes, rentals, and hospitality spaces."
-              description="The template positions the business as consultative, reliable, and premium without sounding stiff. It is sales-focused, but still warm."
+              description="Our showroom team pairs design fluency with practical project support, so the finished room feels beautiful, livable, and properly resolved."
             />
             <div className="grid gap-5 sm:grid-cols-2">
               {features.map((feature) => (
@@ -81,7 +81,7 @@ function App() {
             <SectionHeader
               eyebrow="Interior inspiration"
               title="Showroom stories that help clients imagine the finished room."
-              description="Use these editorial panels for project photography, styled corners, design packages, or room inspiration collections."
+              description="Editorial room settings bring together furniture, lighting, palette, and proportion so every client can see how individual pieces become a home."
               className="[&_h2]:text-ivory [&_p:last-child]:text-ivory/68"
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -103,7 +103,7 @@ function App() {
             <SectionHeader
               eyebrow="Client words"
               title="Social proof for homeowners, designers, and project buyers."
-              description="The testimonials are realistic and replaceable, with a grid structure that can grow as the client gathers reviews."
+              description="Clients come to Oak & Ivory for an experience that feels attentive, transparent, and quietly luxurious from first visit to final placement."
               align="center"
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
