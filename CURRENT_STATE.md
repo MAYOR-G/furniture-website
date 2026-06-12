@@ -80,3 +80,37 @@ npm run build
 - `src/index.css`
 - `tailwind.config.js`
 - `CURRENT_STATE.md`
+
+## Upgrade Pass - 2026-06-11
+
+### What Was Improved
+
+- Added a premium reveal-on-scroll system across collections, products, features, showroom stories, CTA, and testimonials.
+- Improved showroom image sizing on mobile while keeping immersive desktop imagery.
+- Preserved the showroom/editorial direction and avoided changing the established furniture design language.
+
+### Files Changed
+
+- `src/App.tsx`
+- `src/index.css`
+- `src/components/Reveal.tsx`
+- `src/components/ShowroomCard.tsx`
+
+### Responsive Fixes Made
+
+- Showroom story cards now use smaller mobile heights and larger desktop heights.
+- Motion wrappers preserve clean stacking across mobile and tablet.
+
+### Motion / Interaction Improvements Added
+
+- Added Intersection Observer reveal animations with staggered timing.
+- Added reduced-motion support.
+
+### Known Issues Remaining
+
+- No ecommerce/cart or product detail flow is connected.
+- Placeholder images should be replaced with real showroom/product photography.
+
+### Suggested Next Improvements
+
+- Add product detail pages, fabric/material swatches, room packages, and an inquiry form.

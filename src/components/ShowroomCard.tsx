@@ -12,7 +12,7 @@ export function ShowroomCard({ story, featured = false }: ShowroomCardProps) {
       <ImageFrame
         src={story.image}
         alt={story.title}
-        className="h-[420px] rounded-[2rem] shadow-soft"
+        className="h-80 rounded-[1.4rem] shadow-soft sm:h-[420px] sm:rounded-[2rem]"
         imageClassName="transition duration-700 hover:scale-105"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent" />

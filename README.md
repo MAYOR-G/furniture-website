@@ -39,3 +39,9 @@ Update that file to replace the brand name, phone number, email, location, navig
 - No checkout, backend, CMS, or booking integration is included.
 - Remote furniture/interior images are used as replaceable placeholders.
 - The design references the local UI libraries for section structure and polish, but it does not copy an entire library or template.
+
+## Production Notes
+
+- Replace placeholder showroom/product photography before client delivery.
+- Connect consultation CTAs to a real inquiry, CRM, or appointment workflow.
+- Add SEO metadata, Open Graph images, and product detail pages for launch.
