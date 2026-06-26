@@ -93,21 +93,7 @@ export const heroSlides: HeroSlide[] = [
     subtitle: "Soft ivory upholstery, quiet walnut storage, and layered lighting for city living.",
     location: "London",
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=86",
-  },
-  {
-    title: "West Village lounge",
-    subtitle: "Relaxed silhouettes, sculptural tables, and warm neutrals with gallery-style restraint.",
-    location: "New York",
-    image:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1400&q=86",
-  },
-  {
-    title: "Lincoln Park dining room",
-    subtitle: "A composed hosting suite built around timber, stone, and beautifully balanced seating.",
-    location: "Chicago",
-    image:
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=86",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=92",
   },
 ];
 

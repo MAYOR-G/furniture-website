@@ -78,6 +78,45 @@ section[id] {
   filter: blur(0);
 }
 
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes heroDrift {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.11) translate3d(-1.4%, -1%, 0);
+  }
+}
+
+@keyframes scrollCue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(220%);
+  }
+}
+
+.animate-heroDrift {
+  animation: heroDrift 7s ease-out both;
+}
+
+.animate-scrollCue {
+  animation: scrollCue 1.45s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -92,5 +131,11 @@ section[id] {
     opacity: 1;
     transform: none;
     filter: none;
+  }
+
+  .marquee-track,
+  .animate-heroDrift,
+  .animate-scrollCue {
+    animation: none !important;
   }
 }

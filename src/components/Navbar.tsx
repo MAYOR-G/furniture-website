@@ -1,24 +1,54 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { brand, navLinks } from "../data/siteContent";
 import { cn } from "../lib/utils";
 import { ButtonLink } from "./ButtonLink";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.72);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-linen/78 backdrop-blur-xl">
+    <header
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "border-b border-white/10 bg-charcoal/92 py-0 shadow-card backdrop-blur-xl"
+          : "border-b border-white/10 bg-transparent py-2"
+      )}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a href="#top" className="flex items-center gap-3" aria-label={brand.name}>
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-charcoal font-display text-lg font-bold text-ivory shadow-soft">
+          <span
+            className={cn(
+              "grid h-11 w-11 place-items-center rounded-full font-display text-lg font-bold shadow-soft transition",
+              scrolled ? "border border-white/35 bg-white/10 text-white" : "border border-white/35 bg-white/10 text-white"
+            )}
+          >
             OI
           </span>
           <span className="leading-none">
-            <span className="block font-display text-xl font-semibold tracking-wide text-charcoal">
+            <span
+              className={cn(
+                "block font-display text-xl font-semibold tracking-wide transition",
+                "text-white"
+              )}
+            >
               {brand.name}
             </span>
-            <span className="mt-1 hidden text-[11px] font-bold uppercase tracking-[0.28em] text-walnut/70 sm:block">
+            <span
+              className={cn(
+                "mt-1 hidden text-[11px] font-bold uppercase tracking-[0.28em] transition sm:block",
+                "text-white"
+              )}
+            >
               Premium showroom
             </span>
           </span>
@@ -29,7 +59,10 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-bold text-charcoal/68 transition hover:text-charcoal"
+              className={cn(
+                "text-sm font-bold transition",
+                "text-white hover:text-white"
+              )}
             >
               {link.label}
             </a>
@@ -37,14 +70,19 @@ export function Navbar() {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonLink href="#consultation" className="min-h-11 px-5">
+          <ButtonLink href="#consultation" variant="light" className="min-h-11 px-5">
             Book a Consultation
           </ButtonLink>
         </div>
 
         <button
           type="button"
-          className="grid h-11 w-11 place-items-center rounded-full border border-charcoal/15 bg-white/60 text-charcoal transition hover:bg-white lg:hidden"
+          className={cn(
+            "grid h-11 w-11 place-items-center rounded-full border transition lg:hidden",
+            scrolled
+              ? "border-white/20 bg-white/10 text-white hover:bg-white/15"
+              : "border-white/20 bg-white/10 text-white hover:bg-white/15"
+          )}
           onClick={() => setOpen((current) => !current)}
           aria-expanded={open}
           aria-label="Toggle navigation menu"

@@ -8,7 +8,7 @@ export function ConsultationCTA() {
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-charcoal-depth shadow-soft">
         <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
           <ImageFrame
-            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+            src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?auto=format&fit=crop&w=1200&q=85"
             alt="Furniture consultation setting"
             className="min-h-[340px] rounded-none"
             imageClassName="opacity-90"
