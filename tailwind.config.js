@@ -7,16 +7,17 @@ export default {
         ivory: "#f7f0e6",
         bone: "#efe2d0",
         linen: "#fbf7ef",
-        charcoal: "#28221d",
+        charcoal: "#1A1A1A",
+        slate: "#57534E",
+        amber: "#B45309",
         walnut: "#6f503b",
         bronze: "#a66f3f",
-        clay: "#b88463",
-        sage: "#7a866b",
-        stone: "#d8cabb",
+        wood: "#4A3018",
       },
       fontFamily: {
-        display: ["Libre Caslon Display", "Georgia", "serif"],
-        body: ["Manrope", "Avenir Next", "Segoe UI", "sans-serif"],
+        display: ["'Cormorant Garamond'", "Georgia", "serif"],
+        sans: ["'Geist Sans'", "Inter", "sans-serif"],
+        mono: ["'Geist Mono'", "monospace"],
       },
       boxShadow: {
         soft: "0 22px 70px rgba(64, 42, 27, 0.12)",
@@ -27,7 +28,7 @@ export default {
         "linen-radial":
           "radial-gradient(circle at top left, rgba(166, 111, 63, 0.12), transparent 36%), linear-gradient(135deg, #fbf7ef 0%, #efe2d0 100%)",
         "charcoal-depth":
-          "linear-gradient(135deg, #28221d 0%, #3b2c22 55%, #5f432f 100%)",
+          "linear-gradient(135deg, #1A1A1A 0%, #2D2A26 55%, #3D3D3D 100%)",
       },
       keyframes: {
         riseIn: {

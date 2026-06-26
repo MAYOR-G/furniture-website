@@ -6,22 +6,22 @@ type TestimonialCardProps = {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <figure className="rounded-[1.5rem] border border-charcoal/10 bg-white/55 p-6 shadow-insetGlow">
-      <blockquote className="font-display text-2xl font-semibold leading-snug text-charcoal">
+    <figure className="h-full flex flex-col justify-between rounded-2xl border border-charcoal/5 bg-[#FAFAFA] p-8 shadow-sm">
+      <blockquote className="font-display text-[26px] font-medium leading-[1.3] text-charcoal">
         "{testimonial.quote}"
       </blockquote>
-      <figcaption className="mt-8 flex items-center gap-4">
-        <span className="grid h-12 w-12 place-items-center rounded-full bg-charcoal text-sm font-extrabold text-ivory">
+      <figcaption className="mt-10 flex items-center gap-4">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-amber text-sm font-bold text-white">
           {testimonial.initials}
         </span>
-        <span>
-          <span className="block font-extrabold text-charcoal">
+        <div>
+          <span className="block font-sans text-[15px] font-semibold text-charcoal">
             {testimonial.name}
           </span>
-          <span className="mt-1 block text-sm text-charcoal/58">
+          <span className="mt-1 block font-mono text-[11px] uppercase tracking-[0.1em] text-slate">
             {testimonial.title}
           </span>
-        </span>
+        </div>
       </figcaption>
     </figure>
   );

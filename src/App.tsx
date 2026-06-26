@@ -49,22 +49,22 @@ const furnitureMarquee = [
 
 function App() {
   return (
-    <div className="min-h-screen overflow-hidden bg-linen text-charcoal">
+    <div className="min-h-screen overflow-hidden bg-white text-charcoal">
       <Navbar />
       <main>
         <Hero />
 
-        <section className="bg-charcoal px-5 py-7 text-ivory lg:px-8">
+        <section className="bg-[#4A3018] px-6 py-12 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-px overflow-hidden border-y border-white/10 bg-white/10 md:grid-cols-4">
             {features.map((feature) => {
               const Icon = feature.icon;
               return (
-                <div key={feature.title} className="bg-charcoal px-5 py-5">
-                  <Icon className="h-5 w-5 text-bone" />
-                  <p className="mt-3 text-xs font-extrabold uppercase tracking-[0.22em] text-bone">
+                <div key={feature.title} className="bg-[#4A3018] px-6 py-8">
+                  <Icon className="h-5 w-5 text-amber" />
+                  <p className="mt-4 font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-white">
                     {feature.title}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-ivory/62">
+                  <p className="mt-2 font-sans text-sm leading-[1.6] text-white/80">
                     {feature.description}
                   </p>
                 </div>
@@ -73,35 +73,35 @@ function App() {
           </div>
         </section>
 
-        <section className="overflow-hidden border-y border-charcoal/10 bg-bone py-5">
+        <section className="overflow-hidden border-y border-white/10 bg-[#4A3018] py-6">
           <div className="marquee-track flex w-max gap-8 px-4">
             {[...furnitureMarquee, ...furnitureMarquee].map((item, index) => (
               <span
                 key={`${item}-${index}`}
-                className="font-display text-4xl uppercase leading-none text-charcoal/78 sm:text-5xl"
+                className="font-display text-4xl uppercase leading-none text-white/80 sm:text-5xl"
               >
                 {item}
-                <span className="ml-8 text-bronze">*</span>
+                <span className="ml-8 text-amber">✦</span>
               </span>
             ))}
           </div>
         </section>
 
-        <section id="about" className="px-5 py-24 lg:px-8">
+        <section id="about" className="px-6 py-24 lg:px-8 bg-white">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <Reveal>
               <div className="relative">
                 <ImageFrame
                   src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=86"
                   alt="Elegant interior with sculptural furniture"
-                  className="min-h-[520px] shadow-soft"
+                  className="min-h-[520px] shadow-sm rounded-2xl"
                   imageClassName="transition duration-700 hover:scale-105"
                 />
-                <div className="absolute -bottom-8 right-4 max-w-xs bg-charcoal p-6 text-ivory shadow-soft sm:right-10">
-                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-bone">
+                <div className="absolute -bottom-8 right-4 max-w-xs bg-white p-8 text-charcoal shadow-sm border border-charcoal/5 sm:right-10 rounded-2xl">
+                  <p className="font-mono text-[11px] font-extrabold uppercase tracking-[0.15em] text-slate">
                     Studio note
                   </p>
-                  <p className="mt-3 font-display text-3xl leading-none">
+                  <p className="mt-3 font-display text-[28px] leading-tight text-charcoal">
                     Calm is designed before it is decorated.
                   </p>
                 </div>
@@ -110,13 +110,13 @@ function App() {
             <Reveal delay={120}>
               <SectionHeader
                 eyebrow="Interior furniture studio"
-                title="We design pieces that feel calm, intentional, and made for real homes."
+                title="Calm, intentional pieces designed for real homes."
                 description="Every room starts with proportion. We balance generous seating, tactile materials, quiet storage, and the small finishing pieces that make a space feel composed instead of filled."
               />
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
                 {["Custom Pieces", "Interior Styling", "Handpicked Materials", "Delivery & Setup"].map((item) => (
-                  <div key={item} className="flex items-center gap-3 border-t border-charcoal/12 pt-4 text-sm font-extrabold uppercase tracking-[0.16em] text-walnut">
-                    <CheckCircle2 className="h-5 w-5 text-bronze" />
+                  <div key={item} className="flex items-center gap-3 border-t border-charcoal/5 pt-4 font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-charcoal">
+                    <CheckCircle2 className="h-4 w-4 text-amber" />
                     {item}
                   </div>
                 ))}
@@ -125,40 +125,47 @@ function App() {
           </div>
         </section>
 
-        <section id="collections" className="bg-ivory px-5 py-24 lg:px-8">
+        <section id="collections" className="bg-[#4A3018] px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
                 <SectionHeader
+                  theme="dark"
                   eyebrow="Featured collections"
                   title="Room-by-room pieces with a showroom eye."
                   description="Living rooms, dining rooms, bedrooms, offices, and outdoor spaces are built as complete atmospheres, not isolated products."
                 />
-                <p className="max-w-xl text-base leading-8 text-charcoal/60 lg:justify-self-end">
+                <p className="max-w-xl text-base leading-8 text-white/70 lg:justify-self-end">
                   A subtle category glide keeps the page commercial, while the
                   image-led cards keep it emotional. Every collection is chosen
                   for scale, finish, and how it holds a room together.
                 </p>
               </div>
             </Reveal>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-              {collections.map((collection, index) => (
-                <Reveal key={collection.title} delay={index * 65}>
-                  <CollectionCard collection={collection} />
-                </Reveal>
-              ))}
+            <div className="mt-16 grid gap-6 md:grid-cols-12">
+              {collections.map((collection, index) => {
+                let colSpan = "";
+                if (index === 0) colSpan = "md:col-span-7";
+                else if (index === 1) colSpan = "md:col-span-5";
+                else colSpan = "md:col-span-4";
+                
+                return (
+                  <Reveal key={collection.title} delay={index * 65} className={colSpan}>
+                    <CollectionCard collection={collection} />
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section id="transformation" className="bg-charcoal px-5 py-24 text-ivory lg:px-8">
+        <section id="transformation" className="bg-[#efe2d0] px-6 py-24 text-charcoal lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr]">
             <Reveal className="lg:sticky lg:top-28 lg:h-fit">
               <SectionHeader
                 eyebrow="Transformation"
                 title="Better furniture changes the feeling of the entire room."
                 description="The right scale can make a compact room feel generous. The right material can make a new space feel settled."
-                className="[&_h2]:text-ivory [&_p:last-child]:text-ivory/68"
               />
             </Reveal>
             <div className="grid gap-5 md:grid-cols-2">
@@ -167,11 +174,11 @@ function App() {
                   <ImageFrame
                     src={item.image}
                     alt={item.title}
-                    className={index === 0 ? "min-h-[420px] md:mt-20" : "min-h-[520px]"}
+                    className={index === 0 ? "min-h-[420px] md:mt-20 rounded-2xl border border-charcoal/5" : "min-h-[520px] rounded-2xl border border-charcoal/5"}
                     imageClassName="transition duration-700 hover:scale-105"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/78 via-transparent to-transparent" />
-                    <h3 className="absolute bottom-6 left-6 right-6 font-display text-4xl leading-none text-ivory">
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
+                    <h3 className="absolute bottom-6 left-6 right-6 font-display text-[28px] leading-[1.1] text-white">
                       {item.title}
                     </h3>
                   </ImageFrame>
@@ -181,10 +188,11 @@ function App() {
           </div>
         </section>
 
-        <section id="process" className="px-5 py-24 lg:px-8">
+        <section id="process" className="bg-[#4A3018] px-6 py-24 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.86fr_1.14fr]">
             <Reveal>
               <SectionHeader
+                theme="dark"
                 eyebrow="Materials and process"
                 title="Warm woods, quiet textiles, precise finishes, and a clear route to delivery."
                 description="Our process is polished but not precious. You get material direction, proper measurements, custom options, and a room that arrives ready to live in."
@@ -195,15 +203,15 @@ function App() {
                 const StepIcon = step.icon;
                 return (
                   <Reveal key={step.title} delay={index * 80}>
-                    <article className="border border-charcoal/10 bg-white/55 p-6 shadow-insetGlow transition duration-300 hover:-translate-y-1 hover:shadow-card">
+                    <article className="rounded-2xl border border-charcoal/5 bg-[#fbf7ef] p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-card">
                       <div className="flex items-center justify-between gap-5">
-                        <span className="font-display text-5xl text-bronze/45">0{index + 1}</span>
-                        <StepIcon className="h-6 w-6 text-walnut" />
+                        <span className="font-display text-5xl text-slate/20">0{index + 1}</span>
+                        <StepIcon className="h-6 w-6 text-amber" />
                       </div>
-                      <h3 className="mt-8 font-display text-4xl leading-none text-charcoal">
+                      <h3 className="mt-8 font-display text-3xl leading-none text-charcoal">
                         {step.title}
                       </h3>
-                      <p className="mt-4 text-sm leading-7 text-charcoal/64">{step.text}</p>
+                      <p className="mt-4 font-sans text-sm leading-[1.7] text-slate">{step.text}</p>
                     </article>
                   </Reveal>
                 );
@@ -212,7 +220,7 @@ function App() {
           </div>
         </section>
 
-        <section id="products" className="bg-bone px-5 py-24 lg:px-8">
+        <section id="products" className="bg-[#f7f0e6] px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <SectionHeader
@@ -232,14 +240,14 @@ function App() {
           </div>
         </section>
 
-        <section id="showroom" className="bg-charcoal px-5 py-24 text-ivory lg:px-8">
+        <section id="showroom" className="bg-[#4A3018] px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <SectionHeader
+                theme="dark"
                 eyebrow="Lookbook"
                 title="Image-led rooms with a quiet luxury point of view."
                 description="Every room setting brings furniture, light, art, palette, and proportion into one complete visual story."
-                className="[&_h2]:text-ivory [&_p:last-child]:text-ivory/68"
               />
             </Reveal>
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -256,7 +264,7 @@ function App() {
           <ConsultationCTA />
         </Reveal>
 
-        <section id="testimonials" className="px-5 pb-24 pt-8 lg:px-8">
+        <section id="testimonials" className="bg-[#efe2d0] px-6 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <SectionHeader

@@ -9,15 +9,15 @@ export function CollectionCard({ collection }: CollectionCardProps) {
   const Icon = collection.icon;
 
   return (
-    <article className="group overflow-hidden rounded-[1.75rem] border border-charcoal/10 bg-white/55 shadow-insetGlow transition duration-300 hover:-translate-y-1 hover:shadow-card">
+    <article className="group h-full overflow-hidden rounded-2xl border border-charcoal/10 bg-white shadow-insetGlow transition duration-300 hover:-translate-y-1 hover:shadow-card">
       <ImageFrame
         src={collection.image}
         alt={`${collection.title} furniture collection`}
-        className="h-56"
+        className="h-[320px] sm:h-72 md:h-80"
         imageClassName="transition duration-700 group-hover:scale-105"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/48 via-transparent to-transparent" />
-        <div className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center rounded-full bg-ivory text-charcoal shadow-soft">
+        <div className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center rounded-full bg-white text-charcoal shadow-soft">
           <Icon className="h-5 w-5" />
         </div>
       </ImageFrame>

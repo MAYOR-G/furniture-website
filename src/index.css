@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Manrope:wght@400;500;600;700;800&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color: #28221d;
-  background: #fbf7ef;
+  color: #1A1A1A;
+  background: #FFFFFF;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,23 +23,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background:
-    linear-gradient(90deg, rgba(111, 80, 59, 0.045) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(111, 80, 59, 0.035) 1px, transparent 1px),
-    linear-gradient(135deg, #fbf7ef 0%, #f7f0e6 52%, #efe2d0 100%);
-  background-size: 72px 72px, 72px 72px, auto;
-  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  content: "";
-  background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.48), transparent 44%),
-    linear-gradient(300deg, rgba(166, 111, 63, 0.12), transparent 62%);
+  background: #FFFFFF;
+  font-family: 'Geist Sans', 'Inter', sans-serif;
 }
 
 button,

@@ -1,7 +1,25 @@
 import { useEffect, useState } from "react";
-import { assuranceItems, brand, heroSlides, heroStats } from "../data/siteContent";
-import { ButtonLink } from "./ButtonLink";
+import { brand, heroSlides } from "../data/siteContent";
 import { cn } from "../lib/utils";
+import { motion, Variants } from "framer-motion";
+import { CheckCircle, MapPin, Package, Phone, ShieldCheck } from "lucide-react";
+
+const textVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: custom * 0.15, duration: 0.8, ease: "easeOut" }
+  })
+};
+
+const assuranceItems = [
+  { label: "Secure quote process", icon: ShieldCheck },
+  { label: "Quality-checked finishes", icon: CheckCircle },
+  { label: "Packed for delivery", icon: Package },
+  { label: "Private showroom visits", icon: MapPin },
+  { label: "Phone consultation", icon: Phone },
+];
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -12,81 +30,117 @@ export function Hero() {
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % heroSlides.length);
-    }, 5200);
+    }, 6000);
 
     return () => window.clearInterval(timer);
   }, []);
 
   return (
-    <section id="top" className="relative h-[100svh] min-h-[720px] overflow-hidden bg-charcoal px-5 pb-6 pt-28 text-white lg:px-8 lg:pt-32">
+    <section id="top" className="relative h-[100svh] min-h-[720px] overflow-hidden bg-white px-6 pb-8 pt-32 lg:px-8">
       {heroSlides.map((slide, index) => (
-        <img
+        <motion.img
           key={slide.title}
           src={slide.image}
           alt={slide.title}
           className={cn(
-            "absolute inset-0 h-full w-full object-cover opacity-0 transition duration-[1400ms]",
-            index === activeIndex && "opacity-100 animate-heroDrift"
+            "absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-[1400ms]"
           )}
+          style={{ opacity: index === activeIndex ? 1 : 0 }}
+          initial={{ scale: 1.0 }}
+          animate={{ scale: index === activeIndex ? 1.04 : 1.0 }}
+          transition={{ duration: 20, ease: "linear" }}
         />
       ))}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(28,22,17,0.74)_0%,rgba(28,22,17,0.45)_42%,rgba(28,22,17,0.12)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(28,22,17,0.72),transparent_40%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_30%,rgba(0,0,0,0.20),transparent_34%)]" />
+      
+      {/* Dark wood gradient overlay for white text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#2a1a0c] via-[#4A3018]/40 to-transparent h-full w-full pointer-events-none" />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-between">
-        <div className="max-w-5xl animate-rise">
-          <p className="mb-5 inline-flex rounded-full border border-white/35 bg-white/12 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.24em] text-white shadow-insetGlow backdrop-blur-md">
-            Bespoke furniture studio
-          </p>
-          <h1 className="max-w-5xl text-balance font-display text-6xl font-semibold uppercase leading-[0.82] tracking-normal text-white drop-shadow-[0_5px_28px_rgba(0,0,0,0.32)] sm:text-7xl lg:text-8xl xl:text-[7.25rem]">
-            Furniture That Makes A Room Feel Complete.
+      <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-between">
+        <div className="pt-12 md:pt-20">
+          <motion.div 
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+            className="mb-6 font-mono text-[13px] font-bold uppercase tracking-[0.2em] text-white/90"
+          >
+            PREMIUM SHOWROOM — BESPOKE STUDIO
+          </motion.div>
+          
+          <h1 className="max-w-[14ch] font-display text-[80px] font-bold leading-[1.0] tracking-[-0.02em] text-white sm:text-[100px] lg:text-[120px] drop-shadow-md">
+            <motion.div custom={1} initial="hidden" animate="visible" variants={textVariants}>Furniture That</motion.div>
+            <motion.div custom={2} initial="hidden" animate="visible" variants={textVariants} className="text-amber">Completes</motion.div>
+            <motion.div custom={3} initial="hidden" animate="visible" variants={textVariants}>Your Room.</motion.div>
           </h1>
-          <p className="mt-7 max-w-2xl text-lg font-medium leading-9 text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.36)]">
-            {brand.name} designs calm, intentional rooms with custom pieces,
-            handpicked materials, and white-glove placement for homes that need
-            more than furniture.
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="#consultation" variant="light">
+          
+          <motion.p 
+            custom={4}
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+            className="mt-8 max-w-[45ch] font-sans text-[18px] leading-[1.8] text-white/90 font-medium"
+          >
+            Custom pieces, handpicked materials, and white-glove placement for homes that need more than furniture.
+          </motion.p>
+          
+          <motion.div 
+            custom={5}
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+            className="mt-12 flex flex-col gap-4 sm:flex-row"
+          >
+            <a 
+              href="#consultation" 
+              className="group flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-sans text-[14px] font-bold uppercase tracking-[0.08em] text-[#4A3018] transition-all hover:bg-ivory active:scale-[0.98]"
+            >
               Book Consultation
-            </ButtonLink>
-            <ButtonLink href="#collections" variant="light">
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </a>
+            <a 
+              href="#collections" 
+              className="group flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-transparent px-8 py-4 font-sans text-[14px] font-bold uppercase tracking-[0.08em] text-white transition-all hover:border-white hover:bg-white/10"
+            >
               View Collection
-            </ButtonLink>
-          </div>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </a>
+          </motion.div>
         </div>
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div className="grid gap-px overflow-hidden border border-white/12 bg-white/12 sm:grid-cols-3">
-            {heroStats.map((stat) => (
-              <div key={stat.label} className="bg-charcoal/36 p-5 backdrop-blur-md">
-                <p className="font-display text-4xl font-semibold leading-none text-white">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-white">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+        <div className="mt-12 flex flex-col gap-8 pb-4">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            <motion.div custom={6} initial="hidden" animate="visible" variants={textVariants} className="flex flex-col">
+              <span className="font-display text-5xl font-bold text-white">12+</span>
+              <span className="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-white/70">Curated Room Sets</span>
+            </motion.div>
+            <div className="hidden h-12 w-px bg-white/20 sm:block"></div>
+            <motion.div custom={7} initial="hidden" animate="visible" variants={textVariants} className="flex flex-col">
+              <span className="font-display text-5xl font-bold text-white">48 hr</span>
+              <span className="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-white/70">Design Quote Turnaround</span>
+            </motion.div>
+            <div className="hidden h-12 w-px bg-white/20 sm:block"></div>
+            <motion.div custom={8} initial="hidden" animate="visible" variants={textVariants} className="flex flex-col">
+              <span className="font-display text-5xl font-bold text-white">4.9/5</span>
+              <span className="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-white/70">Client Experience Rating</span>
+            </motion.div>
           </div>
-          <div className="flex flex-wrap gap-3 lg:max-w-xl lg:justify-end">
+          
+          <motion.div custom={9} initial="hidden" animate="visible" variants={textVariants} className="flex flex-wrap gap-4">
             {assuranceItems.map((item) => {
               const Icon = item.icon;
               return (
                 <span
                   key={item.label}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/24 bg-white/12 px-4 py-2 text-xs font-bold text-white backdrop-blur-md"
+                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/90"
                 >
-                  <Icon className="h-4 w-4 text-white" />
+                  <Icon className="h-4 w-4 text-amber" />
                   {item.label}
                 </span>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
-
     </section>
   );
 }

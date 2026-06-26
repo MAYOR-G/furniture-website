@@ -2,14 +2,13 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { brand, navLinks } from "../data/siteContent";
 import { cn } from "../lib/utils";
-import { ButtonLink } from "./ButtonLink";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.72);
+    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.1);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -18,39 +17,16 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-500",
         scrolled
-          ? "border-b border-white/10 bg-charcoal/92 py-0 shadow-card backdrop-blur-xl"
-          : "border-b border-white/10 bg-transparent py-2"
+          ? "border-b border-charcoal/5 bg-white/95 py-2 shadow-sm backdrop-blur-md"
+          : "border-b border-transparent bg-transparent py-4"
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3" aria-label={brand.name}>
-          <span
-            className={cn(
-              "grid h-11 w-11 place-items-center rounded-full font-display text-lg font-bold shadow-soft transition",
-              scrolled ? "border border-white/35 bg-white/10 text-white" : "border border-white/35 bg-white/10 text-white"
-            )}
-          >
-            OI
-          </span>
-          <span className="leading-none">
-            <span
-              className={cn(
-                "block font-display text-xl font-semibold tracking-wide transition",
-                "text-white"
-              )}
-            >
-              {brand.name}
-            </span>
-            <span
-              className={cn(
-                "mt-1 hidden text-[11px] font-bold uppercase tracking-[0.28em] transition sm:block",
-                "text-white"
-              )}
-            >
-              Premium showroom
-            </span>
+          <span className="font-display text-[18px] font-medium text-[#1A1A1A]">
+            Oak & Ivory Living
           </span>
         </a>
 
@@ -59,10 +35,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={cn(
-                "text-sm font-bold transition",
-                "text-white hover:text-white"
-              )}
+              className="font-sans text-[13px] font-medium uppercase tracking-[0.08em] text-[#2D2A26] transition-colors hover:text-amber"
             >
               {link.label}
             </a>
@@ -70,19 +43,18 @@ export function Navbar() {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonLink href="#consultation" variant="light" className="min-h-11 px-5">
+          <a
+            href="#consultation"
+            className="group flex items-center gap-2 rounded-full border border-charcoal bg-white px-5 py-2 font-sans text-[13px] font-medium uppercase tracking-[0.08em] text-charcoal transition-all hover:bg-charcoal hover:text-white"
+          >
             Book a Consultation
-          </ButtonLink>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </a>
         </div>
 
         <button
           type="button"
-          className={cn(
-            "grid h-11 w-11 place-items-center rounded-full border transition lg:hidden",
-            scrolled
-              ? "border-white/20 bg-white/10 text-white hover:bg-white/15"
-              : "border-white/20 bg-white/10 text-white hover:bg-white/15"
-          )}
+          className="grid h-10 w-10 place-items-center rounded-full border border-charcoal/10 bg-white/50 text-charcoal backdrop-blur-md transition hover:bg-white/80 lg:hidden"
           onClick={() => setOpen((current) => !current)}
           aria-expanded={open}
           aria-label="Toggle navigation menu"
@@ -93,25 +65,30 @@ export function Navbar() {
 
       <div
         className={cn(
-          "grid overflow-hidden border-t border-charcoal/10 bg-linen/95 transition-all duration-300 lg:hidden",
+          "grid overflow-hidden border-t border-charcoal/5 bg-white/95 backdrop-blur-md transition-all duration-300 lg:hidden",
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         )}
       >
         <div className="min-h-0">
-          <div className="space-y-2 px-5 pb-5">
+          <div className="space-y-2 px-6 pb-6 pt-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-full px-4 py-3 text-sm font-bold text-charcoal/72 transition hover:bg-white/70 hover:text-charcoal"
+                className="block rounded-lg px-4 py-3 font-sans text-[13px] font-medium uppercase tracking-[0.08em] text-charcoal transition hover:bg-charcoal/5"
               >
                 {link.label}
               </a>
             ))}
-            <ButtonLink href="#consultation" className="mt-2 w-full">
+            <a
+              href="#consultation"
+              onClick={() => setOpen(false)}
+              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-charcoal bg-white px-5 py-3 font-sans text-[13px] font-medium uppercase tracking-[0.08em] text-charcoal transition-all hover:bg-charcoal hover:text-white"
+            >
               Book a Consultation
-            </ButtonLink>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </a>
           </div>
         </div>
       </div>
